@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">FarmerApp</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string-array name="title">
+        <item>Crop</item>
+        <item>Credit</item>
+        <item>Scheme</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Ask your query related to Crop</item>
+        <item>Ask your query related to Credit</item>
+        <item>Ask your query related to Scheme</item>
+    </string-array>
 </resources>
