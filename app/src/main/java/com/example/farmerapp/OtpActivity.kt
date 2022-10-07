@@ -20,6 +20,7 @@ class OtpActivity : AppCompatActivity() {
     private lateinit var storedVerificationId: String
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var mobileNo : String
+    private lateinit var progressBar : ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,7 @@ class OtpActivity : AppCompatActivity() {
         storedVerificationId = intent.getStringExtra("OTP").toString()
         resendToken = intent.getParcelableExtra("resendToken")!!
         mobileNo = intent.getStringExtra("mobileNo").toString()
+        progressBar = findViewById(R.id.progressBar)
 
         btSubmit.setOnClickListener {
             val otp = etOtp.text.toString()
@@ -37,6 +39,8 @@ class OtpActivity : AppCompatActivity() {
                 if(otp.length == 6) {
                     val credential = PhoneAuthProvider.getCredential(storedVerificationId, otp)
                     signInWithPhoneAuthCredential(credential)
+                    btSubmit.visibility = View.GONE
+                    progressBar.visibility = View.VISIBLE
                 }
                 else{
                     etOtp.error = "Enter valid OTP"

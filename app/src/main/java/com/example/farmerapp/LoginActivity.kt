@@ -54,6 +54,10 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        tvRegister.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
     }
 
     val callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {

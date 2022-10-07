@@ -2,6 +2,20 @@
     <string name="app_name">FarmerApp</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="complete_profile">COMPLETE PROFILE</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="pincode">Pincode</string>
+    <string name="address">Address</string>
+    <string name="question">Question</string>
+    <string name="post_your_question_here">Post your question here</string>
+    <string name="add_resource">Add Image/Video/Voice to your post (optional)</string>
+    <string name="phone">Phone Number</string>
+    <string name="village">Village</string>
+    <string name="submit">Submit</string>
+    <string name="post">Post</string>
 
     <string-array name="title">
         <item>Crop</item>

@@ -1,3 +1,4 @@
 package com.example.farmerapp.models
 
-data class CropContent(val cropName: String)
+data class CropContent(val cropName: String,
+                       val imageUrl : String)

@@ -1,5 +1,6 @@
 package com.example.farmerapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -45,6 +46,8 @@ class FinalCategoryActivity : AppCompatActivity(), CategoryClicked {
 
     override fun onItemClicked(item: FinalCategory) {
         Toast.makeText(this, "Clicked on ${item.ctName}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, QuestionActivity::class.java)
+        startActivity(intent)
     }
 
 }

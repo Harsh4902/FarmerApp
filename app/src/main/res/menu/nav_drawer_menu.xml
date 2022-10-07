@@ -21,4 +21,10 @@
         android:icon="@drawable/ic_log_out"
         app:showAsAction="always|withText"/>
 
+    <item
+        android:id="@+id/miItem4"
+        android:title="Language"
+        android:icon="@drawable/ic_language"
+        app:showAsAction="always|withText"/>
+
 </menu>

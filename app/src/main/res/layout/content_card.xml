@@ -5,11 +5,12 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp"
-    app:cardBackgroundColor="@color/contetnColor"
+    app:cardBackgroundColor="@color/white"
     android:layout_marginLeft="16dp"
     android:layout_marginTop="16dp"
     android:layout_marginRight="16dp"
     android:contextClickable="true"
+    android:alpha="0.85"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,6 +25,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/biopesticides_2"
+            android:scaleType="centerCrop"
             />
 
         <TextView

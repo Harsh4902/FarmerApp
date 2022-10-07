@@ -32,12 +32,10 @@ class HomeScreenActivity : AppCompatActivity(), HomeContentClicked {
         auth = FirebaseAuth.getInstance()
 
         var contentList = mutableListOf(
-            HomeContent("Crop","Ask your query related to Crop",""),
-            HomeContent("Credit","Ask your query related to Credit",""),
-            HomeContent("Scheme","Ask your query related to Scheme",""),
-            HomeContent("Fertilizer","Ask your query related to Fertilizer",""),
-            HomeContent("Soil","Ask your query related to Soil",""),
-            HomeContent("Irrigation","Ask your query related to Irrigation","")
+            HomeContent("Crop","Ask your query related to Crop","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXMKhqrSVjx5d0oVkVxX7cE0h6lDHP0mcHJA&usqp=CAU"),
+            HomeContent("Credit","Ask your query related to Credit","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZdEXPeD-6QacVrZY7to4IYnJd-uPhYEDDKg&usqp=CAU"),
+            HomeContent("Scheme","Ask your query related to Scheme","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOG0hvK3Qz__I1aMcn-njR1j-AW40Z2acRhA&usqp=CAU"),
+
         )
 
         val adapter = HomeContentAdapter(contentList, this)
