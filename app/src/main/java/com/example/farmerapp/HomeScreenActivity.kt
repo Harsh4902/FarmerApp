@@ -17,7 +17,7 @@ class HomeScreenActivity : AppCompatActivity(), HomeContentClicked {
 
     lateinit var toggle : ActionBarDrawerToggle
     private lateinit var auth : FirebaseAuth
-
+    lateinit var ln : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,12 +29,14 @@ class HomeScreenActivity : AppCompatActivity(), HomeContentClicked {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        ln = intent.getStringExtra("language").toString()
+
         auth = FirebaseAuth.getInstance()
 
         var contentList = mutableListOf(
-            HomeContent("Crop","Ask your query related to Crop","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXMKhqrSVjx5d0oVkVxX7cE0h6lDHP0mcHJA&usqp=CAU"),
-            HomeContent("Credit","Ask your query related to Credit","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZdEXPeD-6QacVrZY7to4IYnJd-uPhYEDDKg&usqp=CAU"),
-            HomeContent("Scheme","Ask your query related to Scheme","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOG0hvK3Qz__I1aMcn-njR1j-AW40Z2acRhA&usqp=CAU"),
+            HomeContent(getString(R.string.crop),getString(R.string.askCrop),"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXMKhqrSVjx5d0oVkVxX7cE0h6lDHP0mcHJA&usqp=CAU"),
+            HomeContent(getString(R.string.credit),getString(R.string.askCredit),"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZdEXPeD-6QacVrZY7to4IYnJd-uPhYEDDKg&usqp=CAU"),
+            HomeContent(getString(R.string.scheme),getString(R.string.askScheme),"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOG0hvK3Qz__I1aMcn-njR1j-AW40Z2acRhA&usqp=CAU"),
 
         )
 
@@ -44,15 +46,21 @@ class HomeScreenActivity : AppCompatActivity(), HomeContentClicked {
 
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.miItem1 -> Toast.makeText(applicationContext, "Home", Toast.LENGTH_SHORT).show()
-                R.id.miItem2 -> Toast.makeText(applicationContext, "Profile", Toast.LENGTH_SHORT).show()
-                R.id.miItem3 -> logout()
+                R.id.miItem1 -> Toast.makeText(applicationContext, "Profile", Toast.LENGTH_SHORT).show()
+                R.id.miItem2 -> Toast.makeText(applicationContext, "Settings", Toast.LENGTH_SHORT).show()
+                R.id.miItem3 -> language()
+                R.id.miItem4 -> logout()
             }
 
             true
         }
 
 
+    }
+
+    private fun language() {
+        val intent = Intent(this, Langauge::class.java)
+        startActivity(intent)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -65,9 +73,10 @@ class HomeScreenActivity : AppCompatActivity(), HomeContentClicked {
     }
 
     override fun onItemClick(item: HomeContent) {
-        if(item.title == "Crop"){
+        if(item.title == getString(R.string.crop)){
 
             val intent = Intent(this,CropActivty::class.java)
+            intent.putExtra("language",ln)
             startActivity(intent)
         }
     }

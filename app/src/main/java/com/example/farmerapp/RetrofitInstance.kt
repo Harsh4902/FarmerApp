@@ -10,7 +10,7 @@ class RetrofitInstance {
 
     companion object
     {
-        private val BASE_URL = "http://192.168.242.215/ssip/public/api/"
+        private val BASE_URL = "http://100.96.180.21/ssip/public/api/"
         val interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
             this.level = HttpLoggingInterceptor.Level.BODY
         }

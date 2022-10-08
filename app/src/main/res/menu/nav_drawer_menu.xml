@@ -4,27 +4,29 @@
 
     <item
         android:id="@+id/miItem1"
-        android:title="Profile"
+        android:title="@string/profile"
         android:icon="@drawable/ic_profile"
         app:showAsAction="always|withText"/>
 
     <item
         android:id="@+id/miItem2"
-        android:title="Settings"
+        android:title="@string/settings"
         android:icon="@drawable/ic_settings"
         app:showAsAction="withText|always"
         />
 
     <item
         android:id="@+id/miItem3"
-        android:title="Log Out"
-        android:icon="@drawable/ic_log_out"
+        android:title="@string/language"
+        android:icon="@drawable/ic_language"
         app:showAsAction="always|withText"/>
 
     <item
         android:id="@+id/miItem4"
-        android:title="Language"
-        android:icon="@drawable/ic_language"
+        android:title="@string/log_out"
+        android:icon="@drawable/ic_log_out"
         app:showAsAction="always|withText"/>
+
+
 
 </menu>

@@ -6,14 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.concurrent.TimeUnit
 
@@ -39,7 +36,8 @@ class LoginActivity : AppCompatActivity() {
             if(mobileNo.length == 10){
                 mobileNo = "+91$mobileNo"
                 progressBar.visibility = View.VISIBLE
-                btSubmit.isClickable = false
+                btSubmit.visibility = View.GONE
+                etOtp.isEnabled = false
                 val options = PhoneAuthOptions.newBuilder(auth)
                     .setPhoneNumber(mobileNo)       // Phone number to verify
                     .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit

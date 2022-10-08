@@ -72,6 +72,21 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
+        android:id="@+id/etTaluka"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_edit"
+        android:hint="@string/taluka"
+        android:padding="8dp"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline4"
+        app:layout_constraintTop_toBottomOf="@id/etVillage"
+        android:layout_marginRight="2dp"
+        />
+
+    <EditText
         android:id="@+id/etCity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -80,11 +95,10 @@
         android:hint="@string/city"
         android:padding="8dp"
         android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/guideline4"
+        app:layout_constraintLeft_toLeftOf="@id/guideline4"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etVillage"
-        android:layout_marginRight="2dp"
-        />
+        android:layout_marginLeft="2dp"/>
 
     <EditText
         android:id="@+id/etState"
@@ -95,23 +109,9 @@
         android:hint="@string/state"
         android:padding="8dp"
         android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="@id/guideline4"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etVillage"
-        android:layout_marginLeft="2dp"/>
-
-    <EditText
-        android:id="@+id/etPin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:hint="@string/pincode"
-        android:padding="8dp"
-        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etCity" />
+        app:layout_constraintTop_toBottomOf="@id/etTaluka" />
 
     <EditText
         android:id="@+id/etAddr"
@@ -124,7 +124,7 @@
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etPin"
+        app:layout_constraintTop_toBottomOf="@id/etState"
         />
 
     <Button
