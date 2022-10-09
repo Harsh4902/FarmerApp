@@ -2,17 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/niSearch"
-        android:title="Search"
-        android:icon="@drawable/ic_search"/>
-
-    <item
         android:id="@+id/niHome"
-        android:title="Home"
+        android:title="@string/home"
         android:icon="@drawable/ic_home"/>
 
     <item
+        android:id="@+id/niSearch"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search"/>
+
+
+
+    <item
         android:id="@+id/niNoification"
-        android:title="Notification"
+        android:title="@string/notification"
         android:icon="@drawable/ic_notification"/>
 </menu>

@@ -13,4 +13,11 @@
     <color name="grey_dark">#474747</color>
     <color name="colorPrimaryLight">#106419</color>
     <color name="contetnColor">#DFDBDB</color>
+    <color name="loginColor">#31D37D</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGray">#A8A8A8</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="pink">#fe485a</color>
+    <color name="lightPink">#ef818c</color>
 </resources>

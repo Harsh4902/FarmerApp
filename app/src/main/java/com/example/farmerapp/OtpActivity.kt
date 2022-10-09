@@ -1,6 +1,5 @@
 package com.example.farmerapp
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,11 +7,8 @@ import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
-import com.google.firebase.FirebaseException
-import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
 import kotlinx.android.synthetic.main.activity_otp.*
-import java.util.concurrent.TimeUnit
 
 class OtpActivity : AppCompatActivity() {
 
@@ -20,6 +16,7 @@ class OtpActivity : AppCompatActivity() {
     private lateinit var storedVerificationId: String
     private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var mobileNo : String
+    private lateinit var progressBar : ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +27,7 @@ class OtpActivity : AppCompatActivity() {
         storedVerificationId = intent.getStringExtra("OTP").toString()
         resendToken = intent.getParcelableExtra("resendToken")!!
         mobileNo = intent.getStringExtra("mobileNo").toString()
+        progressBar = findViewById(R.id.progressBar)
 
         btSubmit.setOnClickListener {
             val otp = etOtp.text.toString()
@@ -37,6 +35,9 @@ class OtpActivity : AppCompatActivity() {
                 if(otp.length == 6) {
                     val credential = PhoneAuthProvider.getCredential(storedVerificationId, otp)
                     signInWithPhoneAuthCredential(credential)
+                    btSubmit.visibility = View.GONE
+                    progressBar.visibility = View.VISIBLE
+                    etOtp.isEnabled = false
                 }
                 else{
                     etOtp.error = "Enter valid OTP"

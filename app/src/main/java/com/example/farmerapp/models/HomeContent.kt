@@ -4,4 +4,4 @@ import java.net.URI
 
 data class HomeContent (val title : String,
                         val discription : String,
-                        val imageURI: String)
+                        val imageUrl : String)

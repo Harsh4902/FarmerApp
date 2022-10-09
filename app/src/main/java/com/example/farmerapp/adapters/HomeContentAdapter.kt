@@ -1,7 +1,9 @@
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.farmerapp.R
 import com.example.farmerapp.models.HomeContent
 import kotlinx.android.synthetic.main.content_card.view.*
@@ -30,6 +32,9 @@ class HomeContentAdapter(
         holder.itemView.apply {
             tvHead.text = content[position].title
             tvDiscription.text = content[position].discription
+            val image : ImageView = findViewById(R.id.ivImage)
+
+            Glide.with(this).load(content[position].imageUrl).into(image)
         }
 
     }

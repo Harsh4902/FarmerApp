@@ -3,7 +3,9 @@ package com.example.farmerapp
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.farmerapp.models.CropContent
 import kotlinx.android.synthetic.main.crop_content.view.*
 
@@ -27,6 +29,9 @@ class CropContentAdapter(
     override fun onBindViewHolder(holder: CropContentViewHolder, position: Int) {
         holder.itemView.apply {
             tvCrop.text = content[position].cropName
+            val imageView : ImageView = findViewById(R.id.ivImage)
+
+            Glide.with(this).load(content[position].imageUrl).into(imageView)
         }
     }
 

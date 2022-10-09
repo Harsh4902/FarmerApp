@@ -1,33 +1,69 @@
 package com.example.farmerapp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.example.farmerapp.apis.Api
+import com.example.farmerapp.models.User
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
 
-    val PICK_PHOTO_FOR_AVATAR: Int = 0
+    lateinit var user: User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-
         supportActionBar?.hide()
 
-        btUpload.setOnClickListener {
-            val intent = Intent(Intent.ACTION_GET_CONTENT)
-            intent.type = "image/*"
-            startActivityForResult(intent, PICK_PHOTO_FOR_AVATAR)
 
+
+
+        btSubmit.setOnClickListener {
+
+            val name = etName.text.trim().toString()
+            val phone = etPhone.text.trim().toString()
+            val village = etVillage.text.trim().toString()
+            val taluka = etTaluka.text.trim().toString()
+
+            if(name.isEmpty() || phone.isEmpty() || village.isEmpty() || taluka.isEmpty()) {
+                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                user = User(name, phone, village, taluka)
+                GlobalScope.launch(Dispatchers.IO) {
+                    registerFarmer()
+                }
+            }
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PICK_PHOTO_FOR_AVATAR && resultCode == RESULT_OK && data != null) {
-            val selectedImageUri = data.data
-            imageView2.setImageURI(selectedImageUri)
-        }
+    private suspend fun registerFarmer() {
+        val retIn = RetrofitInstance.getRetrofitInstance().create(Api::class.java)
+
+
+        retIn.registerFarmer(user.name!!,user.phone!!,user.village!!,user.taluka!!).enqueue(object : retrofit2.Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if(response.isSuccessful){
+                    Toast.makeText(this@RegisterActivity, "Registered Successfully", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    Toast.makeText(this@RegisterActivity, "Registration Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Toast.makeText(this@RegisterActivity, "Registration Failed", Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
+
+
 }

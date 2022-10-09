@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FarmerApp</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="complete_profile">તમારી પ્રોફાઇલ પૂર્ણ કરો</string>
+    <string name="full_name">પૂરું નામ</string>
+    <string name="email">ઈમેલ</string>
+    <string name="state">રાજ્ય</string>
+    <string name="pincode">પિનકોડ</string>
+    <string name="address">સરનામું</string>
+    <string name="question">પ્રશ્ન</string>
+    <string name="post_your_question_here">તમારો પ્રશ્ન અહીં પોસ્ટ કરો</string>
+    <string name="add_resource">તમારી પોસ્ટમાં છબી/વિડિયો/વોઇસ ઉમેરો (વૈકલ્પિક)</string>
+    <string name="phone">ફોન નંબર</string>
+    <string name="village">ગામ</string>
+    <string name="submit">સબમિટ કરો</string>
+    <string name="post">પોસ્ટ</string>
+    <string name="home">હોમ</string>
+    <string name="search">શોધો</string>
+    <string name="notification">સૂચના</string>
+    <string name="profile">પ્રોફાઇલ</string>
+    <string name="settings">સેટિંગ્સ</string>
+    <string name="log_out">લોગ આઉટ</string>
+    <string name="language">ભાષા</string>
+    <string name="english">અંગ્રેજી</string>
+    <string name="city">શહેર</string>
+    <string name="taluka">તાલુકો</string>
+    <string name="crop">પાક</string>
+    <string name="scheme">સ્કીમ</string>
+    <string name="askCrop">પાકને લગતી તમારી ક્વેરી પૂછો</string>
+    <string name="askCredit">ક્રેડિટ સંબંધિત તમારી ક્વેરી પૂછો</string>
+    <string name="askScheme">સ્કીમ સંબંધિત તમારી ક્વેરી પૂછો</string>
+    <string name="credit">ક્રેડિટ</string>
+
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FarmerApp</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="english">अंग्रेज़ी</string>
+    <string name="language">भाषाओं</string>
+    <string name="search">खोज</string>
+    <string name="complete_profile">अपनी प्रोफ़ाइल पूरी करें</string>
+    <string name="full_name">पूरा नाम</string>
+    <string name="email">ईमेल</string>
+    <string name="city">शहर</string>
+    <string name="state">राज्य</string>
+    <string name="pincode">पिनकोड</string>
+    <string name="address">पता</string>
+    <string name="question">प्रश्न</string>
+    <string name="post_your_question_here">अपना प्रश्न यहां पोस्ट करें</string>
+    <string name="add_resource">अपनी पोस्ट में इमेज/वीडियो/वॉयस जोड़ें (वैकल्पिक)</string>
+    <string name="phone">फ़ोन नंबर</string>
+    <string name="village">गाँव</string>
+    <string name="submit">सबमिट करें</string>
+    <string name="post">पोस्ट करें</string>
+    <string name="home">होम</string>
+    <string name="profile">प्रोफ़ाइल</string>
+    <string name="notification">सूचना</string>
+    <string name="settings">सेटिंग</string>
+    <string name="log_out">लॉग आउट करें</string>
+    <string name="taluka">तालुका</string>
+    <string name="crop">फसल</string>
+    <string name="scheme">" योजना"</string>
+    <string name="askCrop">फसल से संबंधित अपने प्रश्न पूछें</string>
+    <string name="askCredit">क्रेडिट से संबंधित अपनी क्वेरी पूछें</string>
+    <string name="askScheme">योजना से संबंधित अपने प्रश्न पूछें</string>
+    <string name="credit">क्रेडिट</string>
+</resources>
